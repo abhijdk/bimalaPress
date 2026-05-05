@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bimala Printing Press - Premium Printing Services</title>
-    <!-- Font Awesome -->
+    <!-- Adding Font Awesome for Social Media Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -27,7 +27,7 @@
             color: var(--text-color);
         }
 
-        /* Header */
+        /* Header with Social Icons */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -43,6 +43,17 @@
             text-align: center;
         }
 
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
         .social-icons {
             display: flex;
             gap: 20px;
@@ -51,18 +62,25 @@
         .social-icons a {
             color: white;
             font-size: 1.5rem;
-            transition: 0.3s;
+            transition: color 0.3s ease;
+            text-decoration: none;
         }
 
         .social-icons a:hover {
             color: var(--secondary-color);
         }
 
-        /* Sticky Navigation */
+        /* Navigation */
         nav {
             background: #222;
+            color: white;
             padding: 10px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -72,6 +90,7 @@
             color: white;
             text-decoration: none;
             padding: 10px 20px;
+            display: inline-block;
             font-weight: bold;
         }
 
@@ -80,21 +99,35 @@
             border-radius: 5px;
         }
 
-        /* Hero Section with Parallax Background */
+        /* Hero Section with FLEXMACHINE.JPG Background */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('FLEXMACHINE.JPG') center/cover fixed no-repeat;
-            padding: 120px 20px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('FLEXMACHINE.JPG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            padding: 100px 20px;
             text-align: center;
             color: white;
             border-bottom: 5px solid var(--secondary-color);
         }
 
-        .hero h2 { font-size: 2.8rem; margin-bottom: 20px; }
-        .hero p { max-width: 900px; margin: 0 auto; font-size: 1.2rem; }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-        /* Services Grid */
+        .hero p {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            font-size: 1.3rem;
+            font-weight: 400;
+            line-height: 1.8;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Services Section */
         .services {
             padding: 60px 20px;
             max-width: 1200px;
@@ -110,32 +143,40 @@
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
             background: white;
-            border-radius: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .service-card:hover { transform: translateY(-10px); }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
 
         .service-card img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            background: #eee; /* Fallback background */
-            display: block;
         }
 
-        .service-info { padding: 20px; text-align: center; }
-        .service-info h3 { color: var(--primary-color); margin-bottom: 10px; }
+        .service-info {
+            padding: 20px;
+            text-align: center;
+        }
 
-        /* Contact */
+        .service-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
         .contact {
             background: var(--primary-color);
             color: white;
@@ -143,54 +184,49 @@
             text-align: center;
         }
 
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         .location-btn {
             display: inline-block;
             background: var(--secondary-color);
             color: white !important;
             padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-transform: uppercase;
             font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
         }
 
-        .location-btn:hover { opacity: 0.9; transform: scale(1.05); }
-
-        /* Footer & Globestyles */
+        /* Footer */
         footer {
             background: #111;
             color: #777;
             text-align: center;
-            padding: 40px 20px;
-        }
-
-        .design-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .design-links a {
-            color: #555;
-            font-size: 1.4rem;
-            transition: 0.3s;
-        }
-
-        .design-links a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-3px);
+            padding: 20px;
         }
 
         @media (max-width: 768px) {
-            .hero h2 { font-size: 2rem; }
-            .hide-mobile { display: none; }
+            header { flex-direction: column; gap: 15px; }
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <div style="width: 50px;" class="hide-mobile"></div> 
         <div class="header-content">
@@ -198,89 +234,101 @@
             <p>Your One-Stop Solution for All Types of Printing</p>
         </div>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home</a>
         <a href="#services">Our Services</a>
         <a href="#contact">Contact Us</a>
     </nav>
 
+    <!-- Hero Section with Background Image -->
     <section id="home" class="hero">
         <h2>High-Quality Professional Printing</h2>
-        <p>ଆମେ ସମସ୍ତ ପ୍ରକାରର ପ୍ରିଣ୍ଟ ମିଡିଆରେ ବିଶେଷଜ୍ଞ, ଯାହା ଆପଣଙ୍କର ବ୍ୟକ୍ତିଗତ ଓ ବ୍ୟବସାୟିକ ଆବଶ୍ୟକତା ପାଇଁ ସ୍ପଷ୍ଟ, ଆକର୍ଷଣୀୟ ଓ ଉଚ୍ଚ-ମାନଙ୍କର ପରିଣାମ ପ୍ରଦାନ କରୁ।</p>
+        <p>ଆମେ ସମସ୍ତ ପ୍ରକାରର ପ୍ରିଣ୍ଟ ମିଡିଆରେ ବିଶେଷଜ୍ଞ, ଯାହା ଆପଣଙ୍କର ବ୍ୟକ୍ତିଗତ ଓ ବ୍ୟବସାୟିକ ଆବଶ୍ୟକତା ପାଇଁ ସ୍ପଷ୍ଟ, ଆକର୍ଷଣୀୟ ଓ ଉଚ୍ଚ-ମାନଙ୍କର ପରିଣାମ ପ୍ରଦାନ କରୁ। ବଡ଼ ଫ୍ଲେକ୍ସ ବ୍ୟାନର୍ ଠାରୁ ଆକର୍ଷଣୀୟ ବିବାହ ନିମନ୍ତ୍ରଣ ପର୍ଯ୍ୟନ୍ତ, ଆମେ ଆପଣଙ୍କର ଭାବନାକୁ କାଗଜରେ ପ୍ରକାଶ କରୁ।</p>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-title">Our Specialized Services</h2>
+        <h2 class="section-title">Our Services</h2>
         <div class="service-grid">
-            <!-- Image names are now all UPPERCASE to match GitHub file system -->
             <div class="service-card">
                 <img src="FLEXMACHINE.JPG" alt="Flex Printing">
                 <div class="service-info">
                     <h3>Flex Printing</h3>
-                    <p>Banners and hoardings with vibrant colors.</p>
+                    <p>High-resolution banners, hoardings, and promotional flex prints.</p>
                 </div>
             </div>
-            
             <div class="service-card">
                 <img src="OFSETMACHINE.JPG" alt="Offset Printing">
                 <div class="service-info">
                     <h3>Offset Printing</h3>
-                    <p>Perfect for bulk flyers and brochures.</p>
+                    <p>Bulk printing solutions for brochures, flyers, and books.</p>
                 </div>
             </div>
-
             <div class="service-card">
                 <img src="CARDMACHINE.JPG" alt="Event Cards">
                 <div class="service-info">
                     <h3>Event Cards</h3>
-                    <p>Premium wedding and invitation cards.</p>
+                    <p>Wedding, Bratapanayan, and Dasaha Karya invitation cards.</p>
                 </div>
             </div>
-
             <div class="service-card">
                 <img src="ICARD.JPG" alt="Identity Cards">
                 <div class="service-info">
                     <h3>I-Cards</h3>
-                    <p>Professional ID cards for all institutions.</p>
+                    <p>Durable professional ID cards for schools and offices.</p>
                 </div>
             </div>
-
             <div class="service-card">
                 <img src="BINDING.JPG" alt="Photo Binding">
                 <div class="service-info">
                     <h3>Photo Binding</h3>
-                    <p>Spiral and hard-cover album binding.</p>
+                    <p>Professional book, spiral, and premium album binding.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2 class="section-title" style="color: white;">Get In Touch</h2>
         <div class="contact-container">
-            <p><strong>Phone:</strong> +91 9876543210</p>
-            <p><strong>Email:</strong> <a href="mailto:info@bimalaprinting.com">info@bimalaprinting.com</a></p>
-            <a href="https://share.google/7lWrZf6I1ySGc9Vq3" target="_blank" class="location-btn">View On Google Maps</a>
+            <p><strong>Phone:</strong> 98765436210</p>
+            <p><strong>Email:</strong> <a href="mailto:ABCD@EMAIL.COM">ABCD@EMAIL.COM</a></p>
+            <div>
+                <a href="https://share.google/7lWrZf6I1ySGc9Vq3" target="_blank" class="location-btn">View Our Location on Map</a>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Bimala Printing Press. All Rights Reserved.</p>
-        <div class="design-links">
-            <a href="index.html" title="Design 1"><i class="fas fa-globe"></i></a>
-            <a href="index2.html" title="Design 2"><i class="fas fa-globe"></i></a>
-            <a href="index3.html" title="Design 3"><i class="fas fa-globe"></i></a>
-            <a href="index4.html" title="Design 4"><i class="fas fa-globe"></i></a>
-            <a href="index5.html" title="Design 5"><i class="fas fa-globe"></i></a>
-            <a href="index6.html" title="Design 6"><i class="fas fa-globe"></i></a>
+   <!-- Footer -->
+    <footer style="background: #111; color: #777; text-align: center; padding: 40px 20px;">
+        <p style="margin-bottom: 20px;">&copy; 2026 Bimala Printing Press. All Rights Reserved.</p>
+        
+        <!-- Updated Globe Icons for Design Variations -->
+        <div class="design-links" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="index.html" target="_blank" title="Design 1" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
+            <a href="index2.html" target="_blank" title="Design 2" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
+            <a href="index3.html" target="_blank" title="Design 3" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
+            <a href="index4.html" target="_blank" title="Design 4" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
+            <a href="index5.html" target="_blank" title="Design 5" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
+            <a href="index6.html" target="_blank" title="Design 6" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
         </div>
     </footer>
+
+    <!-- Add this CSS to your <style> block to make the globes change color on hover -->
+    <style>
+        .design-links a:hover {
+            color: var(--secondary-color) !important;
+            transform: scale(1.2);
+        }
+    </style>
 
 </body>
 </html>
