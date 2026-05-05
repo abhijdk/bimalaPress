@@ -193,27 +193,53 @@
             background: var(--secondary-color);
             color: white !important;
             padding: 10px 25px;
-            border-radius: 5px;
+            border-radius: 50px;
             margin-top: 15px;
             text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* Footer */
+        .location-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        /* Footer & Globe Links */
         footer {
             background: #111;
             color: #777;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        /* Mobile adjustments for header */
+        .design-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .design-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .design-links a:hover {
+            color: var(--secondary-color) !important;
+            transform: scale(1.2);
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 gap: 15px;
             }
-            .social-icons {
-                order: 2;
+            .hide-mobile {
+                display: none;
             }
         }
     </style>
@@ -222,7 +248,6 @@
 
     <!-- Header Section -->
     <header>
-        <!-- This empty div helps balance the layout if needed, or you can add a logo on the left -->
         <div style="width: 100px;" class="hide-mobile"></div> 
 
         <div class="header-content">
@@ -230,11 +255,10 @@
             <p>Your One-Stop Solution for All Types of Printing</p>
         </div>
 
-        <!-- Social Media Icons Section -->
         <div class="social-icons">
             <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </header>
 
@@ -257,7 +281,7 @@
         
         <div class="service-grid">
             <div class="service-card">
-                <img src="FLEXMACHINE.JPG" alt="Flex Printing Machine">
+                <img src="FLEXMACHINE.jpg" alt="Flex Printing Machine">
                 <div class="service-info">
                     <h3>Flex Printing</h3>
                     <p>High-resolution banners, hoardings, and promotional flex prints of all sizes.</p>
@@ -265,7 +289,7 @@
             </div>
 
             <div class="service-card">
-                <img src="OFSETMACHINE.JPG" alt="Offset Printing Machine">
+                <img src="OFSETMACHINE.jpg" alt="Offset Printing Machine">
                 <div class="service-info">
                     <h3>Offset Printing</h3>
                     <p>Bulk printing solutions for brochures, flyers, books, and corporate materials.</p>
@@ -273,7 +297,7 @@
             </div>
 
             <div class="service-card">
-                <img src="CARDMACHINE.JPG" alt="Wedding and Event Cards">
+                <img src="CARDMACHINE.jpg" alt="Wedding and Event Cards">
                 <div class="service-info">
                     <h3>Event Cards</h3>
                     <p>Beautifully crafted Wedding, Bratapanayan, and Dasaha Karya invitation cards.</p>
@@ -281,7 +305,7 @@
             </div>
 
             <div class="service-card">
-                <img src="ICARD.JPG" alt="Identity Cards">
+                <img src="ICARD.jpg" alt="Identity Cards">
                 <div class="service-info">
                     <h3>I-Cards</h3>
                     <p>Durable and professional ID cards for schools, colleges, and corporate offices.</p>
@@ -289,7 +313,7 @@
             </div>
 
             <div class="service-card">
-                <img src="BINDING.JPG" alt="Photo Binding Services">
+                <img src="BINDING.jpg" alt="Photo Binding Services">
                 <div class="service-info">
                     <h3>Photo Binding</h3>
                     <p>Professional book binding, spiral binding, and premium photo album binding services.</p>
@@ -310,28 +334,19 @@
         </div>
     </section>
 
-   <!-- Footer -->
-    <footer style="background: #111; color: #777; text-align: center; padding: 40px 20px;">
-        <p style="margin-bottom: 20px;">&copy; 2026 Bimala Printing Press. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bimala Printing Press. All Rights Reserved.</p>
         
-        <!-- Updated Globe Icons for Design Variations -->
-        <div class="design-links" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="index1.html" target="_blank" title="Design 1" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
-            <a href="index2.html" target="_blank" title="Design 2" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
-            <a href="index3.html" target="_blank" title="Design 3" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
-            <a href="index4.html" target="_blank" title="Design 4" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
-            <a href="index5.html" target="_blank" title="Design 5" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
-            <a href="index6.html" target="_blank" title="Design 6" style="color: #555; text-decoration: none; font-size: 1.2rem; transition: 0.3s;"><i class="fas fa-globe"></i></a>
+        <div class="design-links">
+            <a href="index1.html" target="_blank" title="Design 1"><i class="fas fa-globe"></i></a>
+            <a href="index2.html" target="_blank" title="Design 2"><i class="fas fa-globe"></i></a>
+            <a href="index3.html" target="_blank" title="Design 3"><i class="fas fa-globe"></i></a>
+            <a href="index4.html" target="_blank" title="Design 4"><i class="fas fa-globe"></i></a>
+            <a href="index5.html" target="_blank" title="Design 5"><i class="fas fa-globe"></i></a>
+            <a href="index6.html" target="_blank" title="Design 6"><i class="fas fa-globe"></i></a>
         </div>
     </footer>
-
-    <!-- Add this CSS to your <style> block to make the globes change color on hover -->
-    <style>
-        .design-links a:hover {
-            color: var(--secondary-color) !important;
-            transform: scale(1.2);
-        }
-    </style>
 
 </body>
 </html>
